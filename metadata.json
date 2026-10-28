@@ -1,0 +1,8 @@
+{
+  "name": "Agami",
+  "description": "Intelligent adaptive study planner and syllabus management for students with custom deadlines, Gemini AI scheduling, Pomodoro focus timer, and performance analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

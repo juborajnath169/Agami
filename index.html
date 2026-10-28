@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <script>
+      // Gracefully handle Vite HMR WebSocket disconnection in containerized/iframe environments
+      window.addEventListener('error', function(e) {
+        if (e && (e.message?.includes?.('WebSocket') || e.message?.includes?.('[vite]'))) {
+          e.preventDefault?.();
+          e.stopImmediatePropagation?.();
+        }
+      }, true);
+      window.addEventListener('unhandledrejection', function(e) {
+        if (e && (e.reason?.message?.includes?.('WebSocket') || e.reason?.message?.includes?.('[vite]'))) {
+          e.preventDefault?.();
+          e.stopImmediatePropagation?.();
+        }
+      });
+    </script>
+    <title>Agami - Adaptive AI Study Planner</title>
+    <meta name="description" content="Intelligent adaptive study planner and syllabus management for students with custom deadlines, Gemini AI scheduling, Pomodoro focus timer, and performance analytics." />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Agami - Adaptive AI Study Planner" />
+    <meta property="og:description" content="Intelligent adaptive study planner and syllabus management for students with custom deadlines, Gemini AI scheduling, Pomodoro focus timer, and performance analytics." />
+    <meta property="og:image" content="/pwa-512x512.png" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Agami - Adaptive AI Study Planner" />
+    <meta name="twitter:description" content="Intelligent adaptive study planner and syllabus management for students with custom deadlines, Gemini AI scheduling, Pomodoro focus timer, and performance analytics." />
+    <meta name="twitter:image" content="/pwa-512x512.png" />
+
+    <!-- PWA & Mobile Web App -->
+    <meta name="theme-color" content="#2563EB" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Agami" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="alternate icon" type="image/png" href="/pwa-192x192.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Google Fonts: Hind Siliguri (Bangla) & Outfit (Latin) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased selection:bg-indigo-500 selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
